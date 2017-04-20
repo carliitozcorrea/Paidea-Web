@@ -13,7 +13,7 @@ Para instalar los bundles y elementos necesarios ejecutar el siguiente comando:
 
 composer install
 
-una vez instalados los bundles necesarios se necesita configurar algunas cosas:
+Una vez instalados los bundles necesarios se necesita configurar algunas cosas:
 
 #Actualizar la base de datos con el esquema actual:
 php app/console doctrine:schema:create
@@ -28,4 +28,8 @@ php app/console fos:user:create
 php app/console assets:install  
 
 #Limpiar el cache
-php app/console cache:clear 
+php app/console cache:clear
+
+
+Para Generar el Cliente Oauth usaremos el siguiente comando:
+php app/console generate:oauth:client
