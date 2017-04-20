@@ -5,30 +5,35 @@
     {{ parent() }}
 {% endblock %}
 {% block fos_user_content %}
-    <div class="col-md-4 col-md-offset-4">
-        <div class="login-wrapper">
-            <div class="box">
-                <div class="content-wrap">
-                    <h6>{{ 'login.title'|trans }}</h6>
-                    <form action="{{ path("fos_user_security_check") }}" method="post">
+    <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4" style="margin-top: 30px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>{{ 'login.title'|trans }}</h3>
+            </div>
+            <div class="panel-body">
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <div class="form-group">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                         <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required"  placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" />
+                    </div>
+                    <div class="form-group">
                         <input class="form-control" type="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" />
-                        <div class="action">
-                            <button type="submit" id="_submit" name="_submit" class="btn btn-primary signup" >Entrar</button>
+                    </div>
+                    {% if error %}
+                        <div class="alert alert-danger" style="margin-top: 10px;">
+                            <strong>{{ error|trans({}, 'FOSUserBundle') }}</strong>
                         </div>
-                    </form>
-                </div>
+                    {% endif %}   
+                    <div class="text-center">
+                        <button type="submit" id="_submit" name="_submit" class="btn btn-primary signup" >Entrar</button>
+                    </div>
+                </form>
             </div>
-            <div class="already">
+            <div class="panel-footer text-center">
                 <a href="{{ path('fos_user_resetting_request') }}">{{ 'login.forgot.password'|trans }}</a>
+                <p class="help-block">Paidea
+                    ©{{ "now"|date("Y") }} All Rights Reserved.</p>
             </div>
-            {% if error %}
-                <div class="alert alert-danger" style="margin-top: 10px;">
-                    {{ error|trans({}, 'FOSUserBundle') }}
-                    <br>
-                </div>
-            {% endif %}
         </div>
     </div>
 {% endblock fos_user_content %}
