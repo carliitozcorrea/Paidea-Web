@@ -1,0 +1,32 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% block title %}
+    {%if route == 'admin_user_edit' %}
+        {{'user.edit'|trans}}
+    {% else %}
+        {{'user.edit.password'|trans}}
+    {%endif%}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>    
+                        {%if route == 'admin_user_edit' %}
+                            {{'user.edit'|trans}}
+                        {% else %}
+                            {{'user.edit.password'|trans}}
+                        {%endif%}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success" role="button" type="submit"><i class="fa fa-check-square"></i> Editar</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

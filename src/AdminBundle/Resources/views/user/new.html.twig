@@ -1,0 +1,22 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% block title %}
+    {{'user.new'|trans}}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>{{'user.new'|trans}}</h3>
+                </div>
+                <div class="panel-body">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success" role="button" type="submit"><i class="fa fa-check-square"></i> Crear</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
