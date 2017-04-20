@@ -26,8 +26,8 @@ user.inactive: Usuarios Inactivos
 user.edit: Editar Usuario
 user.edit.password: Editar Contraseña
 user.new: Nuevo Usuario
-user.name: Alias
-user.complete.name: Nombre
+user.name: Nombre de Usuario
+user.complete.name: Nombre Completo
 user.email: Correo
 
 options: Opciones
