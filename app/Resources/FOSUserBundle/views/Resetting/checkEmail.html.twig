@@ -1,0 +1,13 @@
+{% set body_class="login-bg"%}
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block fos_user_content %}
+    <div class="col-md-push-3 col-md-6">
+        <div class="content-box-header">
+            <div class="panel-title">T Enviar Contraseña</div>
+            <div class="panel-options"></div>
+        </div>
+        <div class="content-box-large box-with-header">   
+            <p>{{ 'resetting.check_email'|trans({'%email%': email}, 'FOSUserBundle') }}</p>
+        </div>
+    </div>
+{% endblock %}
