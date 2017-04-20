@@ -1,0 +1,7 @@
+services:
+    app.model.category:
+        class: AppBundle\Model\CategoryModel
+        arguments:
+            - "@service_container"
+            - "@doctrine.orm.default_entity_manager"
+            - "@security.context"
