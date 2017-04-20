@@ -77,6 +77,11 @@ fos_user:
     profile:
         form:
             type: admin_profile_edit
+    resetting:
+        email:
+            from_email:
+                address:        no-reply@paidea.com
+                sender_name:    Paidea
 
 # Knp Paginator
 knp_paginator:
