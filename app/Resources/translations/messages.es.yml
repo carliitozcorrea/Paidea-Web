@@ -17,4 +17,10 @@ profile.edit.user: Actualizar Usuario
 profile.name: Nombre
 
 admin.title: Admin
-admin.dashboard: Menu Prncipal
+admin.dashboard: Menu Principal
+admin.summary: Resumen de Paidea
+
+user: Usuarios
+user.active: Usuarios Activos
+user.inactive: Usuarios Inactivos
+user.new: Nuevo Usuario
