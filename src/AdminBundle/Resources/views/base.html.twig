@@ -3,27 +3,31 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %}{{'app.name'|trans}} {{'admin.title'|trans}} -{% endblock %}</title>
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}" />
+            <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}" />
+            <link rel="stylesheet" href="{{ asset('assets/css/theme-styles.css') }}" />
+            <link rel="stylesheet" href="{{ asset('assets/css/custom-styles.css') }}" />
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% include 'AdminBundle::nav-bar.html.twig' %}
-        <div class="page-content">
-            <div class="row">
-                <div class="col-md-2">
-                   {% include 'AdminBundle::sidebar.html.twig' %}
-                </div>
-                <div class="col-md-10">    
-                    {% block body %}{% endblock %}
+        <div id="wrapper">
+            {% include 'AdminBundle::nav-bar.html.twig' %}
+            {% include 'AdminBundle::sidebar.html.twig' %}
+            <div id="page-wrapper">
+                <div id="page-inner">
+                {% block body %}{% endblock %}
                 </div>
             </div>
         </div>
-            <script src="{{ asset('assets/js/jquery-3.2.0.min.js') }}"></script>
-            <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
-            <script src="{{ asset('assets/js/custom.js') }}"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+    <script src="{{ asset('assets/js/jquery-3.2.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('assets/js/theme-scripts.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
 </html>
