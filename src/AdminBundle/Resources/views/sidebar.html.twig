@@ -1,0 +1,36 @@
+<div class="sidebar content-box" style="display: block;">
+    <ul class="nav">
+        <!-- Main menu -->
+        <li><a href="{{ path('adminhome') }}"><i class="glyphicon glyphicon-home"></i>T Menu Principal</a></li>
+         <li class="submenu">
+        <a href="#">
+                <i class="glyphicon glyphicon-user"></i>
+                T Usuarios
+                <span class="caret pull-right"></span>
+            </a>
+             <ul>
+                <li><a href="{{ path('admin_user_listactive') }}"><i class="glyphicon glyphicon-chevron-right"></i> T Activos</a></li>
+                <li><a href="{{ path('admin_user_listinactive') }}"><i class="glyphicon glyphicon-chevron-right"></i> T Inactivos</a></li>
+                <li><a href="{{ path('admin_user_new') }}"><i class="glyphicon glyphicon-chevron-right"></i> T Nuevo</a></li>
+            </ul>
+         </li>
+        
+        <li><a href=""><i class="glyphicon glyphicon-stats"></i> 2</a></li>
+        <li><a href=""><i class="glyphicon glyphicon-list"></i> 3</a></li>
+        <li><a href=""><i class="glyphicon glyphicon-record"></i> 4</a></li>
+        <li><a href=""><i class="glyphicon glyphicon-pencil"></i> 5</a></li>
+        <li><a href=""><i class="glyphicon glyphicon-tasks"></i> 6</a></li>
+        <li class="submenu">
+            
+            <a href="#">
+                <i class="glyphicon glyphicon-list"></i> List
+                <span class="caret pull-right"></span>
+            </a>
+            <!-- Sub menu -->
+            <ul>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

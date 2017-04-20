@@ -1,0 +1,17 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% block body %}
+    <div class="content-box-header">
+        <div class="panel-title">
+            T {{route}}
+        </div>
+        <div class="panel-options">
+        </div>
+    </div>
+    <div class="content-box-large box-with-header">
+        {% block content %}
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('assets/js/admin_forms.js') }}"></script>
+{% endblock %}

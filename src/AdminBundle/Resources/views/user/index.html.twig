@@ -1,0 +1,80 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% block title %}
+    {{ parent() }}
+    T Index User
+{% endblock %}
+{% block body %}
+    <div class="content-box-header">
+        <div class="panel-title">
+            T Usuarios
+            {% if route == 'admin_user_listactive'%}
+                T Activos
+            {% else %}
+                T Inactivos
+            {% endif %}
+        </div>
+        <div class="panel-options">
+        </div>
+    </div>
+    <div class="content-box-large box-with-header">
+        {%if users.items %}
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th># ID</th>
+                        <th>T Nombre</th>
+                        <th>T Username</th>
+                        <th>T Correo</th>
+                        <th>T Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">T Opciones</button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                        <span class="sr-only"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('admin_user_edit',{id: user.id}) }}"><i class="glyphicon glyphicon-chevron-right"></i> T Editar</a></li>
+                                        <li><a href="{{ path('admin_user_changepassword',{id: user.id}) }}"><i class="glyphicon glyphicon-chevron-right"></i>T Cambiar Contraseña</a></li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            {% if route == 'admin_user_listactive'%}
+                                                <a href="{{ path('admin_user_toogle',{id: user.id}) }}"><i class="glyphicon glyphicon-chevron-right"></i>T Desactivar</a>
+                                            {% else %}
+                                                <a href="{{ path('admin_user_toogle',{id: user.id}) }}"><i class="glyphicon glyphicon-chevron-right"></i>T Activar</a>
+                                            {% endif %}
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="navigation">
+                {{ knp_pagination_render(users) }}
+            </div>
+        {% else%}
+            <p>
+                T No existen usuarios
+                {% if route == 'admin_user_listactive'%}
+                    T Activos
+                {% else %}
+                    T Inactivos
+                {% endif %}
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+

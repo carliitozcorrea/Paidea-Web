@@ -1,0 +1,41 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th># ID</th>
+            <th>T Nombre</th>
+            <th>T Image</th>
+            <th>T Creado</th>
+            <th>T Actualizado</th> 
+            <th>T Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in entities %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>{{ category.image }}</td>
+                <td>{{ category.created|date("m/d/Y") }}</td>
+                <td>{{ category.updated|date("m/d/Y") }}</td>
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            T Opciones
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a  class="btn" href="{{ path('admin_'~model.name~'_edit',{id: category.id}) }}"><i class="glyphicon glyphicon-chevron-right"></i> T Editar</a></li>
+                            <li class="divider"></li>
+                            <li>
+                            {{ ge.btnStatus(category.isActive, path('admin_'~model.name~'_toggle', {id: category.id})) }}
+                            </li>
+                            <li>
+                              <a data-ajax-remove="{{ path('admin_'~model.name~'_delete',{id: category.id}) }}" class="btn delete"><i class="glyphicon glyphicon-chevron-right"></i> T Eliminar</a>
+                            <li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
