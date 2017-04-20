@@ -1,11 +1,15 @@
 {% set body_class="login-bg"%}
 {% extends "FOSUserBundle::layout.html.twig" %}
+{% block title %}
+    {{ 'login.title'|trans }} en
+    {{ parent() }}
+{% endblock %}
 {% block fos_user_content %}
     <div class="col-md-4 col-md-offset-4">
         <div class="login-wrapper">
             <div class="box">
                 <div class="content-wrap">
-                    <h6>T Iniciar Sesión</h6>
+                    <h6>{{ 'login.title'|trans }}</h6>
                     <form action="{{ path("fos_user_security_check") }}" method="post">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                         <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required"  placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" />
@@ -17,7 +21,7 @@
                 </div>
             </div>
             <div class="already">
-                <a href="{{ path('fos_user_resetting_request') }}">T ¿Olvidaste tu Contraseña?</a>
+                <a href="{{ path('fos_user_resetting_request') }}">{{ 'login.forgot.password'|trans }}</a>
             </div>
             {% if error %}
                 <div class="alert alert-danger" style="margin-top: 10px;">

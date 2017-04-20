@@ -1,5 +1,8 @@
 {% set body_class="login-bg"%}
 {% extends "FOSUserBundle::layout.html.twig" %}
+{% block title %}
+{{ 'login.request.password'|trans }}
+{% endblock %}
 {% block fos_user_content %}
 {% include "FOSUserBundle:Resetting:request_content.html.twig" %}
 {% endblock fos_user_content %}
