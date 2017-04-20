@@ -1,0 +1,7 @@
+app.name : Paidea
+login.title: Iniciar Sesión
+login.forgot.password: ¿Olvidaste tu Contraseña?
+login.request.password: Recuperar Contraseña
+login.reset.password: Nueva Contraseña
+login.check.email: Checa tu Email
+resetting.email.subject: recupera tu contrasena
