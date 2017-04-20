@@ -1,0 +1,8 @@
+{% extends "AdminBundle::base.html.twig" %}
+{% block title %}
+{{ parent() }}
+{{'profile.edit.user'|trans}}
+{% endblock %}
+{% block body %}
+    {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock %}
