@@ -1,14 +1,18 @@
-<div class="content-box-large">
-    <div class="panel-heading">
-        <div class="panel-title">{{'profile.edit.user'|trans}}</div>
-        <div class="panel-options">
-            <a href="{{path ('fos_user_profile_show') }}"class="btn btn-info"><i class="glyphicon glyphicon glyphicon-chevron-left"></i>{{'return'|trans}}</a>
-        </div>
-        <div class="panel-body">
-            <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-                {{ form_widget(form) }}
-                <button class="btn btn-success" type="submit">{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}</button>
-            </form>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>{{'profile.edit.user'|trans}}</h3>
+            </div>
+            <div class="panel-body">
+                <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success" type="submit"><i class="fa fa-check-square"></i> {{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}</button>
+                </form>
+            </div>        
+            <div class="panel-footer text-right">
+                <a href="{{path ('fos_user_profile_show') }}"class="btn btn-info"><i class="fa fa-arrow-left"></i> {{'return'|trans}}</a>
+            </div>
         </div>        
-    </div>        
+    </div>
 </div>

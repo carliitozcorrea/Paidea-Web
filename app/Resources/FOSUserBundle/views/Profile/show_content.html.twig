@@ -1,24 +1,28 @@
-<div class="content-box-large">
-    <div class="panel-heading">
-        <div class="panel-title">{{'my.profile'|trans}}</div>
-        <div class="panel-options">
-            <a href="{{path ('adminhome') }}"class="btn btn-info"><i class="glyphicon glyphicon glyphicon-chevron-left"></i> {{'return'|trans}}</a>
-        </div>
-        <div class="panel-body">
-            <div class="form-group">
-                <label>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}</label>
-                <span class="form-control"> {{ user.username }}</span>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>{{'my.profile'|trans}}</h3>
             </div>
-            <div class="form-group">
-                <label>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}</label>
-                <span class="form-control"> {{ user.email }}</span>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}</label>
+                    <span disabled class="form-control"> {{ user.username }}</span>
+                </div>
+                <div class="form-group">
+                    <label>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}</label>
+                    <span disabled class="form-control"> {{ user.email }}</span>
+                </div>
+                <div class="form-group">
+                    <label>{{'profile.name'|trans}}</label>
+                    <span disabled class="form-control"> {{ user.name }}</span>
+                </div>
+                <a href="{{path ('fos_user_profile_edit') }}"class="btn btn-primary"><i class="fa fa-edit "></i> {{'profile.edit'|trans}}</a>
+                <a href="{{path ('fos_user_change_password') }}"class="btn btn-primary"><i class="fa fa-key"></i> {{'profile.change.password'|trans}}</a>
             </div>
-            <div class="form-group">
-                <label>{{'profile.name'|trans}}</label>
-                <span class="form-control"> {{ user.name }}</span>
+            <div class="panel-footer text-right">
+                <a href="{{path ('adminhome') }}"class="btn btn-info"><i class="fa fa-arrow-left"></i> {{'return'|trans}}</a>
             </div>
-            <a href="{{path ('fos_user_change_password') }}"class="btn btn-primary"> {{'profile.change.password'|trans}}</a>
-            <a href="{{path ('fos_user_profile_edit') }}"class="btn btn-primary"> {{'profile.edit'|trans}}</a>
         </div>
     </div>
 </div>
