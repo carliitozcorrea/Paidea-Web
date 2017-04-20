@@ -5,3 +5,16 @@ login.request.password: Recuperar Contraseña
 login.reset.password: Nueva Contraseña
 login.check.email: Checa tu Email
 resetting.email.subject: recupera tu contrasena
+
+my.account: Mi Cuenta
+my.profile: Mi Usuario
+logout: Cerrar Sesión
+return: Regresar
+
+profile.change.password: Cambiar Contraseña
+profile.edit: Editar
+profile.edit.user: Actualizar Usuario
+profile.name: Nombre
+
+admin.title: Admin
+admin.dashboard: Menu Prncipal
