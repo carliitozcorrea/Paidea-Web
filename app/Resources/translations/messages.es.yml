@@ -23,4 +23,14 @@ admin.summary: Resumen de Paidea
 user: Usuarios
 user.active: Usuarios Activos
 user.inactive: Usuarios Inactivos
+user.edit: Editar Usuario
+user.edit.password: Editar Contraseña
 user.new: Nuevo Usuario
+user.name: Alias
+user.complete.name: Nombre
+user.email: Correo
+
+options: Opciones
+action.edit: Editar
+action.active: Activar
+action.inactive: Desactivar
