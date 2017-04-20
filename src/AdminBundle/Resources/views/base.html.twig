@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Admin -{% endblock %}</title>
+        <title>{% block title %}{{'app.name'|trans}} {{'admin.title'|trans}} -{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
         {% block stylesheets %}{% endblock %}
