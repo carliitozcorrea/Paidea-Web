@@ -11,10 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserRepository extends EntityRepository
 {
+
     /**
      * Find Users by Status
-     * @param type $enabled
-     * 
+     * @param boolean $enabled
+     * @return Query
      */
     public function findUsersByStatus($enabled = null)
     {
@@ -29,5 +30,23 @@ class UserRepository extends EntityRepository
         $query = $qb->getQuery();
 
         return $query;
+    }
+
+    /**
+     * 
+     * @return integer
+     */
+    public function countUserActive()
+    {
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
+        $qb->select('count(u.id)')
+            ->from('AppBundle:User', 'u')
+            ->where('u.enabled = :enabled')
+            ->setParameter('enabled', true);
+
+        $query = $qb->getQuery();
+
+        return $query->getSingleScalarResult();
     }
 }

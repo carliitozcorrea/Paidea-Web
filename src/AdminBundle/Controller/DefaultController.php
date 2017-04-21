@@ -15,6 +15,16 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        
+        $em = $this->getDoctrine()->getManager();
+        $totalUsers = $em->getRepository('AppBundle:User')->countUserActive();
+
+
+        $categoryManager = $this->get('app.model.category');
+        $categorys = $categoryManager->countActive();
+
+        return array(
+            'users' => $totalUsers,
+            'categorys' => $categorys
+        );
     }
 }

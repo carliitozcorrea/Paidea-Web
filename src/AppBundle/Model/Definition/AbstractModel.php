@@ -97,9 +97,9 @@ abstract class AbstractModel extends ContainerAware implements ModelInterface
     {
         $status = $this->em->getReference('AppBundle:Status', EntityModelInterface::STATUS_DELETE);
         $entity->setStatus($status);
-        
+
         $this->update($entity);
-        
+
         return $entity;
     }
 
@@ -113,6 +113,19 @@ abstract class AbstractModel extends ContainerAware implements ModelInterface
     {
         $entityStatus = $this->em->getReference('AppBundle:Status', $status);
         return $this->getRepository()->findByStatus($entityStatus, $parent);
+    }
+
+    /**
+     * 
+     * @param EntityModelInterface|null $parent
+     * @return integer
+     */
+    public function countActive($parent = null)
+    {
+        $queryBuilder = $this->findByStatus(EntityModelInterface::STATUS_ACTIVE, $parent);
+        $queryBuilder->select('count(e.id) as total');
+
+        return $queryBuilder->getQuery()->getSingleScalarResult();
     }
 
     /**
