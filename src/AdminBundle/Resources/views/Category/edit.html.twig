@@ -1,4 +1,8 @@
 {% extends 'AdminBundle:model:edit.html.twig' %}
+{% block title %}
+    {{'category.edit'|trans}} -
+    {{ parent() }}
+{% endblock %}
 {% block paneltitle %}
         {{'category.edit'|trans}}
     {% endblock %}
