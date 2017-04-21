@@ -10,6 +10,8 @@ my.account: Mi Cuenta
 my.profile: Mi Usuario
 logout: Cerrar Sesión
 return: Regresar
+create: Crear
+refresh: Restablecer
 
 profile.change.password: Cambiar Contraseña
 profile.edit: Editar
@@ -30,7 +32,19 @@ user.name: Nombre de Usuario
 user.complete.name: Nombre Completo
 user.email: Correo
 
+category: Categorías
+category.active: Categorías Activas
+category.inactive: Categorías Inactivas
+category.edit: Editar Categoría
+category.new: Nueva Categoría
+category.name: Nombre
+category.image: Imagen
+
 options: Opciones
+created: Creado
+updated: Actualizado
+action.create: Crear
 action.edit: Editar
 action.active: Activar
 action.inactive: Desactivar
+action.delete: Eliminiar
