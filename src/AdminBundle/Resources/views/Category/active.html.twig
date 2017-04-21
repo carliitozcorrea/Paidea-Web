@@ -1,4 +1,7 @@
 {% extends 'AdminBundle:model:active.html.twig' %}
+    {% block paneltitle %}
+        {{'category.active'|trans}}
+    {% endblock %}
 {% block content %}
     {{ include('AdminBundle:Category:_table.html.twig') }}
 {% endblock %}
