@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use JMS\Serializer\Annotation as JMS;
 use AppBundle\Model\Definition\AbstractEntityModel;
 
 /**
@@ -34,7 +35,7 @@ class Category extends AbstractEntityModel
 
     /**
      *
-     * @Vich\UploadableField(mapping="category", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="category_image", fileNameProperty="image")
      * @var \Symfony\Component\HttpFoundation\File\File
      */
     private $file;
@@ -96,6 +97,9 @@ class Category extends AbstractEntityModel
     public function setFile(File $file)
     {
         $this->file = $file;
+        if ($file) {
+            $this->setUpdated(new \DateTime('now'));
+        }
         return $this;
     }
 
@@ -103,7 +107,7 @@ class Category extends AbstractEntityModel
      * Set image
      *
      * @param string $image
-     * @return Category
+     * @return \AppBundle\Entity\Category
      */
     public function setImage($image)
     {
