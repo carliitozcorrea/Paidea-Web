@@ -1,15 +1,24 @@
 {% extends 'AdminBundle::base.html.twig' %}
 {% block body %}
-    <div class="content-box-header">
-        <div class="panel-title">
-            T {{route}}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>
+                        {% block paneltitle %}
+                    {% endblock %}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                <div class="panel-footer">
+                    {% block panelfooter %}
+                    {% endblock %}
+                </div>
+            </div>
         </div>
-        <div class="panel-options">
-        </div>
-    </div>
-    <div class="content-box-large box-with-header">
-        {% block content %}
-        {% endblock %}
     </div>
 {% endblock %}
 {% block javascripts %}

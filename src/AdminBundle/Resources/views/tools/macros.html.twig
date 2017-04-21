@@ -1,7 +1,7 @@
 {% macro btnStatus(active, url) %}
     {% if active %}
-        <a data-ajax-remove="{{ url }}" class="btn"><i class="glyphicon glyphicon-chevron-right"></i> T Desactivar</a>
+        <a href="" data-ajax-remove="{{ url }}">{{'action.inactive'|trans}}</a>
     {% else %}
-        <a data-ajax-remove="{{ url }}" class="btn"><i class="glyphicon glyphicon-chevron-right"></i> T Activar</a>
+        <a href="" data-ajax-remove="{{ url }}">{{'action.active'|trans}}</a>
     {% endif %}
 {% endmacro %}

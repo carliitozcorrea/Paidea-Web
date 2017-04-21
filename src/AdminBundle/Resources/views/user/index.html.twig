@@ -41,10 +41,9 @@
                                         <td>{{ user.email }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-primary">{{'options'|trans}}</button>
                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                    {{'options'|trans}}
                                                     <span class="caret"></span>
-                                                    <span class="sr-only"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
                                                     <li><a href="{{ path('admin_user_edit',{id: user.id}) }}">{{'action.edit'|trans}}</a></li>

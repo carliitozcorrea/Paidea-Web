@@ -1,9 +1,14 @@
 {{ form_start(form) }}
 {{ form_widget(form) }}
 {% block buttons %}
-    <button type="submit" class="btn btn-success">T Crear</button>
-    <button type="reset" class="btn btn-primary">T Resetear</button>
+    <button type="submit" class="btn btn-success">
+        <i class="fa fa-check-square"></i>
+        {% if app.request.attributes.get('_template').template.get('name') == 'new'%}
+        {{'action.create'|trans}}
+        {% else %}
+        {{'action.edit'|trans}}
+        {% endif %}
+    </button>
+{# <button type="reset" class="btn btn-primary">{{'refresh'|trans}}</button>#}
 {% endblock %}
 {{ form_end(form) }}
-</div>
-</form>
