@@ -21,7 +21,9 @@ monolog:
             handler: nested
         nested:
             type: stream
-            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            #path: '%kernel.logs_dir%/%kernel.environment%.log'
+            #Configuration to Heroku
+            path: 'php://stderr'
             level: debug
         console:
             type: console

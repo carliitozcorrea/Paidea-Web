@@ -11,11 +11,6 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/user/Proyectos/6thsf/video-admin/app/config/config.yml</file>
-            <file>file:/Users/user/Proyectos/6thsf/video-admin/app/config/services.yml</file>
-            <file>file:/Users/user/Proyectos/6thsf/video-admin/src/ApiBundle/Controller/DefaultController.php</file>
-            <file>file:/Users/user/Proyectos/6thsf/video-admin/src/ApiBundle/Command/GenerateOAuthClientCommand.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
