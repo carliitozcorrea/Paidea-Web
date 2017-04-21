@@ -17,7 +17,7 @@ use AppBundle\Model\Definition\EntityModelInterface;
 class AbstractControllerModel extends controller
 {
 
-    const LIMIT_PAGE = 25;
+    const LIMIT_PAGE = 10;
 
     protected $model;
     protected $className;
@@ -40,7 +40,6 @@ class AbstractControllerModel extends controller
         return [
             'entities' => $pagination,
             'model' => $this->getModel(),
-            'route' => $this->getRequest()->attributes->get('_route'),
         ];
     }
 
@@ -62,7 +61,6 @@ class AbstractControllerModel extends controller
         return [
             'entities' => $pagination,
             'model' => $this->getModel(),
-            'route' => $this->getRequest()->attributes->get('_route'),
         ];
     }
 
@@ -95,7 +93,6 @@ class AbstractControllerModel extends controller
             'entity' => $entity,
             'form' => $form->createView(),
             'model' => $this->getModel(),
-            'route' => $this->getRequest()->attributes->get('_route'),
         );
     }
 
@@ -165,7 +162,6 @@ class AbstractControllerModel extends controller
             'entity' => $entity,
             'model' => $this->getModel(),
             'form' => $editForm->createView(),
-            'route' => $this->getRequest()->attributes->get('_route')
         );
     }
 
