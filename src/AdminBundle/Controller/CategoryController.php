@@ -14,7 +14,7 @@ use AppBundle\Model\Definition\AbstractControllerModel;
  */
 
 /**
- * @Route("/category", name="categoryz")
+ * @Route("/category", name="category")
  * @Security("has_role('ROLE_USER')")
  */
 class CategoryController extends AbstractControllerModel
