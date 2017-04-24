@@ -9,7 +9,6 @@ use AppBundle\Model\Definition\EntityModelInterface;
 use AppBundle\Repository\CategoryRepository;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
-
 /**
  *
  * @author Carlos Alberto Sanchez Correa
@@ -32,7 +31,7 @@ class CategoryType extends AbstractFormType
             ->add('name', null, [
                 'label' => 'Nombre  de la Categoria',
             ])
-            ->add('file',VichImageType::class, [
+            ->add('file', VichImageType::class, [
                 'label' => 'Imagen',
                 'required' => $fileRequired,
                 'allow_delete' => false, // not mandatory, default is true

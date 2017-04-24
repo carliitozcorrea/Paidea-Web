@@ -6,7 +6,7 @@ use AppBundle\Model\Definition\AbstractModel;
 /**
  * Description of CategoryModel
  *
- * @author user
+ * @author Carlos A.
  */
 class CategoryModel extends AbstractModel
 {
