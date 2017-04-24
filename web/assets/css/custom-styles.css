@@ -10,4 +10,9 @@ and open the template in the editor.
 .login-bg{
     background-color: #E5EBF2;
 }
-
+.thumb{
+    width:100px;
+}
+.navigation .pagination{
+    margin: 0;
+}
