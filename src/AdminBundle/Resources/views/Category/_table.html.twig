@@ -15,8 +15,8 @@
                 <tr>
                     <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
-                    <td style="width:5px;">
-                        <img class="img-responsive" src="{{ asset(vich_uploader_asset(category, 'file')) }}" alt="{{ category.name }}" >
+                    <td>
+                        <img class="img-responsive thumb" src="{{ asset(vich_uploader_asset(category, 'file')) }}" alt="{{ category.name }}" >
                     </td>
                     <td>{{ category.created|date("m/d/Y") }}</td>
                     <td>{{ category.updated|date("m/d/Y") }}</td>

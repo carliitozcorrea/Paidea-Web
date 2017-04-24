@@ -3,9 +3,9 @@
     {{'category.active'|trans}} -
     {{ parent() }}
 {% endblock %}
-    {% block paneltitle %}
-        {{'category.active'|trans}}
-    {% endblock %}
+{% block paneltitle %}
+    {{'category.active'|trans}}
+{% endblock %}
 {% block content %}
     {{ include('AdminBundle:Category:_table.html.twig') }}
 {% endblock %}
