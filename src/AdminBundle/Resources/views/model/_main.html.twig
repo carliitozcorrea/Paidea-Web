@@ -1,21 +1,30 @@
 {% extends 'AdminBundle::base.html.twig' %}
 {% block body %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="{{ col_class is defined ? col_class }}">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3>
                         {% block paneltitle %}
-                    {% endblock %}
+                        {% endblock %}
                     </h3>
                 </div>
                 <div class="panel-body">
                     {% block content %}
                     {% endblock %}
                 </div>
-                <div class="panel-footer text-right">
-                    {% block panelfooter %}
-                    {% endblock %}
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            {% block panelfooter %}
+                            {% endblock %}
+                        </div>
+
+                        <div class="col-md-6 text-right">
+                            <a href="{{path ('adminhome') }}"class="btn btn-info"><i class="fa fa-arrow-left"></i> {{'return'|trans}}</a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
