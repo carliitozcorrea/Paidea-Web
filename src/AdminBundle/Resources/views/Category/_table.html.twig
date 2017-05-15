@@ -1,5 +1,5 @@
-<div class="table-responsive">
-    <table class="table table-hover">
+<div class="table-responsive table-bordered">
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th># ID</th>
@@ -18,8 +18,8 @@
                     <td>
                         <img class="img-responsive thumb" src="{{ asset(vich_uploader_asset(category, 'file')) }}" alt="{{ category.name }}" >
                     </td>
-                    <td>{{ category.created|date("m/d/Y") }}</td>
-                    <td>{{ category.updated|date("m/d/Y") }}</td>
+                    <td>{{ category.created|date("d/m/Y") }}</td>
+                    <td>{{ category.updated|date("d/m/Y") }}</td>
                     <td>
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
