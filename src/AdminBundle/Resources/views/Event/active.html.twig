@@ -1,0 +1,16 @@
+{% extends 'AdminBundle:model:active.html.twig' %}
+{% block title %}
+    {{'event.active'|trans}} -
+    {{ parent() }}
+{% endblock %}
+{% block paneltitle %}
+    {{'event.active'|trans}}
+{% endblock %}
+{% block content %}
+    {{ include('AdminBundle:Event:_table.html.twig') }}
+{% endblock %}
+{% block panelfooter %}
+    <div class="navigation">
+        {{ knp_pagination_render(entities) }}
+    </div>
+{% endblock %}
