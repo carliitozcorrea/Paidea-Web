@@ -10,7 +10,8 @@ use AppBundle\Repository\CategoryRepository;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 /**
- *
+ * Description of CategoryType
+ * 
  * @author Carlos Alberto Sanchez Correa
  */
 class CategoryType extends AbstractFormType
@@ -29,7 +30,7 @@ class CategoryType extends AbstractFormType
 
         $builder
             ->add('name', null, [
-                'label' => 'Nombre  de la Categoria',
+                'label' => 'category.name',
             ])
             ->add('file', VichImageType::class, [
                 'label' => 'Imagen',
