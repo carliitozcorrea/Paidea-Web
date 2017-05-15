@@ -1,25 +1,37 @@
 <div class="table-responsive">
-    <table class="table table-hover">
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th># ID</th>
                 <th>{{'event.name'|trans}}</th>
-                <th>{{'event.image'|trans}}</th>
+                <th>{{'event.type'|trans}}</th>
+                <th>{{'event.start'|trans}}</th>
+                <th>{{'event.finish'|trans}}</th>
+{#                <th>{{'event.image'|trans}}</th>#}
+                <th>{{'event.place'|trans}}</th>
+                <th>{{'event.responsible'|trans}}</th>
                 <th>{{'created'|trans}}</th>
                 <th>{{'updated'|trans}}</th> 
+                <th>{{'created.by'|trans}}</th> 
                 <th>{{'options'|trans}}</th>
             </tr>
         </thead>
         <tbody>
             {% for event in entities %}
-                {#<tr>
-                    <td>{{ category.id }}</td>
-                    <td>{{ category.name }}</td>
-                    <td>
-                        <img class="img-responsive thumb" src="{{ asset(vich_uploader_asset(category, 'file')) }}" alt="{{ category.name }}" >
-                    </td>
-                    <td>{{ category.created|date("m/d/Y") }}</td>
-                    <td>{{ category.updated|date("m/d/Y") }}</td>
+                <tr>
+                    <td>{{ event.id }}</td>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.type }}</td>
+                    <td>{{ event.startdate |date("d/m/Y H:i:s") }}</td>
+                    <td>{{ event.enddate |date("d/m/Y H:i:s") }}</td>
+                    {#<td>
+                        <img class="img-responsive thumb" src="{{ asset(vich_uploader_asset(event, 'file')) }}" alt="{{ event.name }}" >
+                    </td>#}
+                    <td>{{ event.place }}</td>
+                    <td>{{ event.responsible }}</td>
+                    <td>{{ event.created|date("d/m/Y") }}</td>
+                    <td>{{ event.updated|date("d/m/Y") }}</td>
+                    <td>{{ event.user }}</td>
                     <td>
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -27,18 +39,19 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ path('admin_'~model.name~'_edit',{id: category.id}) }}">{{'action.edit'|trans}}</a></li>
+                                <li><a href="{{ path('admin_'~model.name~'_show',{id: event.id}) }}">{{'action.detail'|trans}}</a></li>
+                                <li><a href="{{ path('admin_'~model.name~'_edit',{id: event.id}) }}">{{'action.edit'|trans}}</a></li>
                                 <li class="divider"></li>
                                 <li>
-                                    {{ ge.btnStatus(category.isActive, path('admin_'~model.name~'_toggle', {id: category.id})) }}
+                                    {{ ge.btnStatus(event.isActive, path('admin_'~model.name~'_toggle', {id: event.id})) }}
                                 </li>
                                 <li>
-                                    <a href="" data-ajax-remove="{{ path('admin_'~model.name~'_delete',{id: category.id}) }}" class="delete">{{'action.delete'|trans}}</a>
+                                    <a href="" data-ajax-remove="{{ path('admin_'~model.name~'_delete',{id: event.id}) }}" class="delete">{{'action.delete'|trans}}</a>
                                 <li>
                             </ul>
                         </div>
                     </td>
-                </tr>#}
+                </tr>
             {% endfor %}
         </tbody>
     </table>
