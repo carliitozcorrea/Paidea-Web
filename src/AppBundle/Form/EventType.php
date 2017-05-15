@@ -25,10 +25,10 @@ class EventType extends AbstractFormType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//        $fileRequired = true;
-//        if ($builder->getData()->getId()) {
-//            $fileRequired = false;
-//        }
+        $fileRequired = true;
+        if ($builder->getData()->getId()) {
+            $fileRequired = false;
+        }
         $builder
             ->add('name', null, [
                 'label' => 'event.name',
@@ -45,7 +45,7 @@ class EventType extends AbstractFormType
                 'required' => false,
                 'allow_delete' => false, // not mandatory, default is true
                 'download_link' => false, // not mandatory, default is true
-                'required' => true
+                'required' => $fileRequired
             ])
             ->add('responsible', null, [
                 'label' => 'event.responsible',
