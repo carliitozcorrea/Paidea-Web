@@ -13,6 +13,13 @@
     },
     "require": {
         "php": ">=5.3.9",
+        "ext-gd": "*",
+        "ext-curl": "*",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-PDO": "*",
+        "ext-soap": "*",
         "doctrine/doctrine-bundle": "~1.4",
         "doctrine/orm": "^2.4.8",
         "friendsofsymfony/oauth-server-bundle": "^1.5",
