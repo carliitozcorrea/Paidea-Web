@@ -1,5 +1,5 @@
 <?php
-$db = parse_url(getenv('CLEARDB_DATABASE_URL'));
+$db = parse_url(getenv('SYMFONY_DATABASE_URL'));
 
 if ($db)
 {
