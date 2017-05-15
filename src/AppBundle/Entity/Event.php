@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use JMS\Serializer\Annotation as JMS;
 use AppBundle\Model\Definition\AbstractEntityModel;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Category;
@@ -36,7 +37,7 @@ class Event extends AbstractEntityModel
 
     /**
      *
-     * @Vich\UploadableField(mapping="event", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="event_image", fileNameProperty="image")
      * @var \Symfony\Component\HttpFoundation\File\File
      */
     private $file;
@@ -58,9 +59,16 @@ class Event extends AbstractEntityModel
     /**
      * @var string
      *
-     * @ORM\Column(name="responsible", type="string", length=255)
+     * @ORM\Column(name="responsible", type="string", length=120)
      */
     private $responsible;
+
+    /**
+     *
+     * @var string
+     * @ORM\Column(name="responsible_eco", type="string", length=120)
+     */
+    private $responsibleEco;
 
     /**
      * @var string
@@ -218,6 +226,28 @@ class Event extends AbstractEntityModel
     public function getResponsible()
     {
         return $this->responsible;
+    }
+
+    /**
+     * Set responsible eco
+     * 
+     * @param string $responsibleEco
+     * @return Event
+     */
+    public function setResponsibleEco($responsibleEco)
+    {
+        $this->responsibleEco = $responsibleEco;
+        return $this;
+    }
+
+    /**
+     * Get responsible eco
+     * 
+     * @return string
+     */
+    public function getResponsibleEco()
+    {
+        return $this->responsibleEco;
     }
 
     /**

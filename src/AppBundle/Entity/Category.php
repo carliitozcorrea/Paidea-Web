@@ -125,4 +125,9 @@ class Category extends AbstractEntityModel
     {
         return $this->image;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
