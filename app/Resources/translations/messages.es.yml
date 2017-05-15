@@ -40,9 +40,30 @@ category.new: Nueva Categoría
 category.name: Nombre
 category.image: Imagen
 
+event: Eventos
+event.active: Eventos Activos
+event.inactive: Eventos Inactivos
+event.edit: Editar Evento
+event.new: Nuevo Evento
+event.name: Nombre
+event.type: Categoria de Evento
+event.image: Imagen
+event.start: Fecha de Inicio
+event.finish: Fecha de Finalización
+event.place: Locación
+event.description: Descripción
+event.responsible: Responsable de el Evento
+event.responsible.eco: Eco. de Responsable
+
 options: Opciones
 created: Creado
 updated: Actualizado
+year: Año
+month: Mes
+day: Dia
+hour: Hora
+minute: Minuto
+
 action.create: Crear
 action.edit: Editar
 action.active: Activar
