@@ -8,7 +8,7 @@
                 <a href="#"><i class="fa fa-users"></i>{{'user'|trans}}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li>
-                        <a href="{{ path('admin_user_listactive') }}"><i class="fa fa-user"></i>{{'user.active'|trans}}</a>
+                        <a href="{{ path('admin_user_listactive') }}"><i class="fa fa-user-circle"></i>{{'user.active'|trans}}</a>
                     </li>
                     <li>
                         <a href="{{ path('admin_user_listinactive') }}"><i class="fa fa-user-times"></i>{{'user.inactive'|trans}}</a>
@@ -31,7 +31,21 @@
                         <a href="{{ path('admin_category_new') }}"><i class="fa fa-plus-square"></i>{{'category.new'|trans}}</a>
                     </li>
                 </ul>
-            </li
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-calendar"></i>{{'event'|trans}}<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ path('admin_event_active') }}"><i class="fa fa-calendar-check-o"></i>{{'event.active'|trans}}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_event_inactive') }}"><i class="fa fa-calendar-minus-o"></i>{{'event.inactive'|trans}}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_event_new') }}"><i class="fa fa-calendar-plus-o"></i>{{'event.new'|trans}}</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
