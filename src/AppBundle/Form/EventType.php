@@ -71,7 +71,7 @@ class EventType extends AbstractFormType
                 )
             ))
             ->add('endDate', DatetimeType::class, array(
-                'label' => 'event.start',
+                'label' => 'event.finish',
                 'pickerOptions' => array(
                     'format' => 'dd-MM-yyyy - hh:ii',
                     'startDate' => date('d/m/Y - H:i'),
