@@ -20,11 +20,18 @@ class DefaultController extends Controller
 
 
         $categoryManager = $this->get('app.model.category');
+        $eventManager = $this->get('app.model.event');
+        $careerManager = $this->get('app.model.career');
+        
         $categorys = $categoryManager->countActive();
-
+        $events = $eventManager->countActive();
+        $careers = $careerManager->countActive();
+        
         return array(
             'users' => $totalUsers,
-            'categorys' => $categorys
+            'categorys' => $categorys,
+            'events' => $events,
+            'careers' => $careers
         );
     }
 }

@@ -36,7 +36,7 @@ class DefaultController extends FOSRestController
     {
         $qb = $this->getModel('app.model.event')->findByStatus(Event::STATUS_ACTIVE);
         $events = $qb->getQuery()->getResult();
-        
+
 //        foreach ($events as $event){
 //            dump($event);
 //        }
@@ -57,11 +57,13 @@ class DefaultController extends FOSRestController
         $em = $this->getDoctrine()->getManager();
         $categoryManager = $this->get('app.model.category');
         $eventManager = $this->get('app.model.event');
+        $careerManager = $this->get('app.model.career');
 
         $data = array(
             'users' => $totalUsers = $em->getRepository('AppBundle:User')->countUserActive(),
-            'categorys' => $categorys = $categoryManager->countActive(),
+            'categorys' => $categoryManager->countActive(),
             'events' => $events = $eventManager->countActive(),
+            'careers' => $events = $careerManager->countActive(),
         );
 
         $view = $this->view($data);
