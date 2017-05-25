@@ -16,6 +16,28 @@ class DefaultController extends FOSRestController
 
     /**
      * @Rest\View()
+     * @Rest\Get("/homeStats")
+     */
+    public function homeStats()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $categoryManager = $this->get('app.model.category');
+        $eventManager = $this->get('app.model.event');
+        $careerManager = $this->get('app.model.career');
+
+        $data = array(
+            'users' => $totalUsers = $em->getRepository('AppBundle:User')->countUserActive(),
+            'categorys' => $categoryManager->countActive(),
+            'events' => $events = $eventManager->countActive(),
+            'careers' => $events = $careerManager->countActive(),
+        );
+
+        $view = $this->view($data);
+        return $this->handleView($view);
+    }
+
+    /**
+     * @Rest\View()
      * @Rest\Get("/user")
      */
     public function userAction()
@@ -37,10 +59,6 @@ class DefaultController extends FOSRestController
         $qb = $this->getModel('app.model.event')->findByStatus(Event::STATUS_ACTIVE);
         $events = $qb->getQuery()->getResult();
 
-//        foreach ($events as $event){
-//            dump($event);
-//        }
-//        exit;
         $data = array(
             "events" => $events
         );
@@ -50,20 +68,30 @@ class DefaultController extends FOSRestController
 
     /**
      * @Rest\View()
-     * @Rest\Get("/homeStats")
+     * @Rest\Get("/events/{id}", requirements={"id" = "\d+"})
      */
-    public function homeStats()
+    public function eventAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $categoryManager = $this->get('app.model.category');
-        $eventManager = $this->get('app.model.event');
-        $careerManager = $this->get('app.model.career');
+        $event = $this->getModel('app.model.event')->find($id);
+        $data = array(
+            "event" => $event
+        );
+
+        $view = $this->view($data);
+        return $this->handleView($view);
+    }
+
+    /**
+     * @Rest\View()
+     * @Rest\Get("/careers") 
+     */
+    public function careersAction()
+    {
+        $qb = $this->getModel('app.model.career')->findByStatus(Event::STATUS_ACTIVE);
+        $careers = $qb->getQuery()->getResult();
 
         $data = array(
-            'users' => $totalUsers = $em->getRepository('AppBundle:User')->countUserActive(),
-            'categorys' => $categoryManager->countActive(),
-            'events' => $events = $eventManager->countActive(),
-            'careers' => $events = $careerManager->countActive(),
+            "careers" => $careers
         );
 
         $view = $this->view($data);
