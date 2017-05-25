@@ -57,6 +57,14 @@ event.description: Descripción
 event.responsible: Responsable
 event.responsible.eco: Eco. de Responsable
 
+career: Carreras
+career.active: Carreras Activas
+career.inactive: Carreras Inactivas
+career.new: Nueva Carrera
+career.name: Nombre
+career.key: Clave de Carrera
+career.edit: Editar Carrera
+
 options: Opciones
 created: Creado
 created.by: Creado por
