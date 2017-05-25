@@ -16,3 +16,5 @@
 !/src/AdminBundle/Resources/views/user/edit.html.twig
 !/src/AdminBundle/Resources/views/Event/edit.html.twig
 !/src/AdminBundle/Resources/views/Event/new.html.twig
+!/src/AdminBundle/Resources/views/Career/edit.html.twig
+!/src/AdminBundle/Resources/views/Career/new.html.twig
