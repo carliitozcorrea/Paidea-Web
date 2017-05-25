@@ -7,6 +7,10 @@ and open the template in the editor.
     Created on : 20-abr-2017, 15:33:19
     Author     : carlos
 */
+
+.top-navbar .navbar-brand{
+    font-size: 20px;
+}
 .login-bg{
     background-color: #E5EBF2;
 }

@@ -6,7 +6,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ path('adminhome') }}">{{'app.name'|trans}} {{'admin.title'|trans}}</a>
+        <a class="navbar-brand" href="{{ path('adminhome') }}">
+            <img height="30" src="{{ asset('apple-touch-icon.png') }}">
+            {{'app.name'|trans}} {{'admin.title'|trans}}
+        </a>
     </div>
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
