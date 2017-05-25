@@ -6,7 +6,13 @@
     <div class="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ path('fos_user_security_login') }}">{{'app.name'|trans}}</a>
+                {#<a class="navbar-brand" href="{{ path('fos_user_security_login') }}">
+                    {{'app.name'|trans}}
+                </a>#}
+                <a class="navbar-brand" href="{{ path('fos_user_security_login') }}">
+                    <img height="30" src="{{ asset('apple-touch-icon.png') }}">
+                    {{'app.name'|trans}}
+                </a>
             </div>
         </nav>
         {% for type, messages in app.session.flashBag.all %}
@@ -16,10 +22,10 @@
                 </div>
             {% endfor %}
         {% endfor %}
-            <div class="row">
-                {% block fos_user_content %}
-                {% endblock fos_user_content %}        
-            </div>
+        <div class="row">
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}        
         </div>
     </div>
+</div>
 {% endblock %} 
