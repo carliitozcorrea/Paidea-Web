@@ -5,11 +5,11 @@ use AppBundle\Model\Definition\AbstractModel;
 use AppBundle\Model\Definition\EntityModelInterface;
 
 /**
- * Description of EventModel
+ * Description of CategoryModel
  *
- * @author Carlos A. Sanchez Correa
+ * @author Carlos A.
  */
-class EventModel extends AbstractModel
+class CareerModel extends AbstractModel
 {
 
     public function save(EntityModelInterface $entity)
