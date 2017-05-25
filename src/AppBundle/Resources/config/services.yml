@@ -12,3 +12,10 @@ services:
             - "@service_container"
             - "@doctrine.orm.default_entity_manager"
             - "@security.context"
+            
+    app.model.career:
+        class: AppBundle\Model\CareerModel
+        arguments:
+            - "@service_container"
+            - "@doctrine.orm.default_entity_manager"
+            - "@security.context"
