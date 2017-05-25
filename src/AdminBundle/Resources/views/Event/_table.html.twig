@@ -7,7 +7,6 @@
                 <th>{{'event.type'|trans}}</th>
                 <th>{{'event.start'|trans}}</th>
                 <th>{{'event.finish'|trans}}</th>
-{#                <th>{{'event.image'|trans}}</th>#}
                 <th>{{'event.place'|trans}}</th>
                 <th>{{'event.responsible'|trans}}</th>
                 <th>{{'created'|trans}}</th>
@@ -24,9 +23,6 @@
                     <td>{{ event.type }}</td>
                     <td>{{ event.startdate |date("d/m/Y H:i:s") }}</td>
                     <td>{{ event.enddate |date("d/m/Y H:i:s") }}</td>
-                    {#<td>
-                        <img class="img-responsive thumb" src="{{ asset(vich_uploader_asset(event, 'file')) }}" alt="{{ event.name }}" >
-                    </td>#}
                     <td>{{ event.place }}</td>
                     <td>{{ event.responsible }}</td>
                     <td>{{ event.created|date("d/m/Y") }}</td>

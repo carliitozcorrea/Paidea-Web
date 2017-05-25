@@ -1,0 +1,16 @@
+{% extends 'AdminBundle:model:active.html.twig' %}
+{% block title %}
+    {{'career.active'|trans}} -
+    {{ parent() }}
+{% endblock %}
+{% block paneltitle %}
+    {{'career.active'|trans}}
+{% endblock %}
+{% block content %}
+    {% include('AdminBundle:Career:_table.html.twig') %}
+{% endblock %}
+{% block panelfooter %}
+    <div class="navigation">
+        {{ knp_pagination_render(entities) }}
+    </div>
+{% endblock %}

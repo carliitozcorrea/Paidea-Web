@@ -1,0 +1,45 @@
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th># ID</th>
+                <th>{{'career.name'|trans}}</th>
+                <th>{{'career.key'|trans}}</th>
+                <th>{{'created'|trans}}</th>
+                <th>{{'updated'|trans}}</th> 
+                <th>{{'created.by'|trans}}</th> 
+                <th>{{'options'|trans}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for career in entities %}
+                <tr>
+                    <td>{{ career.id }}</td>
+                    <td>{{ career.name }}</td>
+                    <td>{{ career.careerkey }}</td>
+                    <td>{{ career.created|date("d/m/Y") }}</td>
+                    <td>{{ career.updated|date("d/m/Y") }}</td>
+                    <td>{{ career.user }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                {{'options'|trans}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('admin_'~model.name~'_edit',{id: career.id}) }}">{{'action.edit'|trans}}</a></li>
+                                <li class="divider"></li>
+                                <li>
+                                    {{ ge.btnStatus(career.isActive, path('admin_'~model.name~'_toggle', {id: career.id})) }}
+                                </li>
+                                <li>
+                                    <a href="" data-ajax-remove="{{ path('admin_'~model.name~'_delete',{id: career.id}) }}" class="delete">{{'action.delete'|trans}}</a>
+                                <li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
