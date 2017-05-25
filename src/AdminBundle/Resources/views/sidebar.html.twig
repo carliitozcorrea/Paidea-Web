@@ -46,6 +46,21 @@
                     </li>
                 </ul>
             </li>
+            
+            <li>
+                <a href="#"><i class="fa fa-graduation-cap"></i>{{'career'|trans}}<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ path('admin_career_active') }}"><i class="fa fa-check-square"></i>{{'career.active'|trans}}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_career_inactive') }}"><i class="fa fa-minus-square"></i>{{'career.inactive'|trans}}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_career_new') }}"><i class="fa fa-plus-square"></i>{{'career.new'|trans}}</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
