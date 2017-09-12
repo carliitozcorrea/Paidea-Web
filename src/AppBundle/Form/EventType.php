@@ -5,8 +5,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Vich\UploaderBundle\Form\Type\VichImageType;
-use SC\DatetimepickerBundle\Form\Type\DatetimeType;
 use AppBundle\Model\Definition\AbstractFormType;
 use AppBundle\Model\Definition\EntityModelInterface;
 use AppBundle\Repository\CategoryRepository;
@@ -59,27 +60,13 @@ class EventType extends AbstractFormType
             ->add('description', TextareaType::class, [
                 'label' => 'event.description',
             ])
-            ->add('startDate', DatetimeType::class, array(
+            ->add('startDate', DateTimeType::class, array(
                 'label' => 'event.start',
-                'pickerOptions' => array(
-                    'format' => 'dd-MM-yyyy - hh:ii',
-                    'startDate' => date('d/m/Y - H:i'),
-                    'autoclose' => true,
-                    'todayBtn' => true,
-                    'todayHighlight' => true,
-                    'pickerPosition' => 'bottom-left',
-                )
+
             ))
-            ->add('endDate', DatetimeType::class, array(
+            ->add('endDate', DateTimeType::class, array(
                 'label' => 'event.finish',
-                'pickerOptions' => array(
-                    'format' => 'dd-MM-yyyy - hh:ii',
-                    'startDate' => date('d/m/Y - H:i'),
-                    'autoclose' => true,
-                    'todayBtn' => true,
-                    'todayHighlight' => true,
-                    'pickerPosition' => 'bottom-left',
-                )
+
             ))
         ;
     }

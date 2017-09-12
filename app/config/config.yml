@@ -39,7 +39,7 @@ twig:
     form:
         resources: ['bootstrap_3_layout.html.twig']
     form_themes:
-        - 'VichUploaderBundle:Form:fields.html.twig'    
+        - 'VichUploaderBundle:Form:fields.html.twig'
         
 # Doctrine Configuration
 doctrine:
@@ -105,11 +105,7 @@ vich_uploader:
            namer:              vich_uploader.namer_uniqid
            delete_on_update:   true
 
-#SC datetime Picker
-sc_datetimepicker:
-    picker: ~
-
-#Fos Rest        
+#Fos Rest
 fos_rest:
     param_fetcher_listener: true
     body_listener: true

@@ -30,7 +30,7 @@
                                 <li><a href="{{ path('admin_'~model.name~'_edit',{id: career.id}) }}">{{'action.edit'|trans}}</a></li>
                                 <li class="divider"></li>
                                 <li>
-                                    {{ ge.btnStatus(career.isActive, path('admin_'~model.name~'_toggle', {id: career.id})) }}
+                                    {#{{ ge.btnStatus(career.isActive, path('admin_'~model.name~'_toggle', {id: career.id})) }}#}
                                 </li>
                                 <li>
                                     <a href="" data-ajax-remove="{{ path('admin_'~model.name~'_delete',{id: career.id}) }}" class="delete">{{'action.delete'|trans}}</a>
